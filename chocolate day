@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Day Celebration</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5e6c8;
+            margin: 0;
+            flex-direction: column;
+        }
+        #chocolates {
+            margin-top: 20px;
+            display: none;
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #8B4513;
+            transform: rotate(-45deg);
+            animation: heartbeat 1.5s infinite;
+        }
+        #chocolates::before, #chocolates::after {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background-color: #8B4513;
+            border-radius: 50%;
+        }
+        #chocolates::before {
+            top: -50px;
+            left: 0;
+        }
+        #chocolates::after {
+            left: 50px;
+            top: 0;
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1) rotate(-45deg);
+            }
+            50% {
+                transform: scale(1.2) rotate(-45deg);
+            }
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #8B4513;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            display: none;
+            color: #8B4513;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="message">HAPPY CHOCOLATE DAY BUBU</h1>
+    <button onclick="showChocolates()">Click Here</button>
+    <div id="chocolates"></div>
+    
+    <script>
+        function showChocolates() {
+            document.getElementById('message').style.display = "block";
+            document.getElementById('chocolates').style.display = "block";
+            document.querySelector('button').style.display = "none";
+        }
+    </script>
+</body>
+</html>
